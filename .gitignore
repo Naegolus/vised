@@ -10,6 +10,7 @@
 *.blg
 *.out
 *~
+todos.tex
 
 Documentation/_DOC_GEN/
 _tsas_log.txt

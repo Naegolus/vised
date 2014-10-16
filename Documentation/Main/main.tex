@@ -2,6 +2,8 @@
 \usepackage[pdftex,bookmarks=true,bookmarksnumbered=true]{hyperref}
 \usepackage{xcolor}
 \usepackage{textcomp} % Copyright sign
+\usepackage[utf8]{inputenc}
+\usepackage{xspace}
 
 \usepackage{graphicx}
 \graphicspath{{images/}}
@@ -13,50 +15,52 @@
 
 \hypersetup
 {
-    bookmarksnumbered = true,
-    pdfauthor = Johannes Natter
-    pdftitle = Visual Software Editor - vised,
-    pdfsubject = ,
-    pdfkeywords = ,
-    pdfcreator = ,
-    pdfproducer = ,
-    colorlinks = true,
-    linkcolor = black,
-    citecolor = black,
-    filecolor = black,
-    urlcolor = black
+  bookmarksnumbered = true,
+  pdfauthor = Johannes Natter
+  pdftitle = Visual Software Editor - vised,
+  pdfsubject = ,
+  pdfkeywords = ,
+  pdfcreator = ,
+  pdfproducer = ,
+  colorlinks = true,
+  linkcolor = black,
+  citecolor = black,
+  filecolor = black,
+  urlcolor = black
 }
 \usepackage{epstopdf}
 \usepackage{pdfsync}
 
 % Commands
 \newcommand{\todo}[1]{\textbf{\textcolor{red}{TODO: #1}}}
+\newcommand{\vised}{\emph{vised}\xspace}
 
 \begin{document}
 
-    \title{\textbf{Visual Software Editor \\ \textit{vised}}} 
-    \author{Johannes Natter}
-    \date{\today \\ \ \\ \ \\ \ \\ \ \\ \ \\ \ \\ \ \\ \ \\ \ \\ \ \\ \ \\ \ \\ \ \\ \ \\ \includegraphics[width=100 pt]{../_common/logo}}
+  \title{\textbf{Visual Software Editor \\ \vised}} 
+  \author{Johannes Natter}
+  \date{\today \\ \vspace{5cm} \includegraphics[width=100 pt]{../_common/logo}}
 
-    % Intro
-    \frontmatter
-    \maketitle
-    \include{license}
-    \tableofcontents
-    \include{abstract}
+  % Intro
+  \frontmatter
+  \maketitle
+  \include{license}
+  \tableofcontents
+  \include{abstract}
 
-    % Document
-    \mainmatter
-    \include{introduction}
+  % Document
+  \mainmatter
+  \include{introduction}
+  \include{lorem_ipsum}
 
-    \clearpage
+  \clearpage
 
-    % Apendix
-    \backmatter
-    \include{a_test}
+  % Apendix
+  \backmatter
+  \IfFileExists{./todos.tex}{\include{todos}}{}
 
-    % References
-    \printbibliography
+  % References
+  \printbibliography
 
 \end{document}
 
