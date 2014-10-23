@@ -15,6 +15,6 @@ todos.tex
 Documentation/_DOC_GEN/
 _tsas_log.txt
 
-build-*
+build-hello*
 hello*
 
