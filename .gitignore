@@ -4,6 +4,7 @@
 *.bcf
 *.pdfsync
 *.pdf
+*.png
 *.log
 *.run.xml
 *.toc
@@ -13,6 +14,7 @@
 todos.tex
 
 Documentation/_DOC_GEN/
+doc_built
 _tsas_log.txt
 
 build-hello*
