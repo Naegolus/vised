@@ -11,14 +11,6 @@
 *.blg
 *.out
 *~
-todos.tex
 
-Documentation/_DOC_GEN/
 doc_built
-_tsas_log.txt
-
-build-hello*
-hello*
-
-Makefile_PROJ_MST_MAIN
 
