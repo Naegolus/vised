@@ -11,6 +11,7 @@
 *.blg
 *.out
 *~
+todos.tex
 
 doc_built
 sandbox
