@@ -28,72 +28,27 @@
 % -----------------------------------------------------------------------------
 
 \documentclass[a4paper,11pt,oneside]{book}
-\usepackage[pdftex,bookmarks=true,bookmarksnumbered=true]{hyperref}
-\usepackage{xcolor}
-\usepackage{textcomp} % Copyright sign
-\usepackage[utf8]{inputenc}
-\usepackage{xspace}
-
+\usepackage{array}
 \usepackage{graphicx}
-\graphicspath{{../_common/}{images/}}
+\usepackage{color}
 
-\usepackage[
-    backend=biber
-]{biblatex}
-\addbibresource{literature.bib}
+\graphicspath{{../documentation/_common/}}
 
-\hypersetup
-{
-  bookmarksnumbered = true,
-  pdfauthor = Johannes Natter
-  pdftitle = Visual Software Editor - vised,
-  pdfsubject = ,
-  pdfkeywords = ,
-  pdfcreator = ,
-  pdfproducer = ,
-  colorlinks = true,
-  linkcolor = black,
-  citecolor = black,
-  filecolor = black,
-  urlcolor = black
-}
-\usepackage{epstopdf}
-\usepackage{pdfsync}
-
-% Commands
-\newcommand{\todo}[1]{\textbf{\textcolor{red}{TODO: #1}}\\}
-\newcommand{\vised}{\emph{vised}\xspace}
+\definecolor{mrwhite}{RGB}{254,254,254}
 
 \begin{document}
 
-  \title{\textbf{Visual Software Editor \\ \vised}} 
-  \author{Johannes Natter}
-  \date{\today \\ \vspace{5cm} \includegraphics[width=100 pt]{logo}}
-
-  % Intro
-  \frontmatter
-  \maketitle
-  \include{license}
-  \tableofcontents
-  \include{abstract}
-
-  % Document
-  \mainmatter
-  \include{introduction}
-  \include{existing_systems}
-  \include{introducing_vised}
-  \include{software_architecture}
-  \include{conclusion}
-  \include{lorem_ipsum}
-
-  \clearpage
-
-  % Apendix
-  \backmatter
-  \IfFileExists{./todos.tex}{\include{todos}}{}
-
-  % References
-  \printbibliography
+	\author{}
+	\title
+	{
+		\fcolorbox{mrwhite}{mrwhite}
+		{
+			\includegraphics[width=100 pt]{logo}
+		}
+	}
+	\date{}
+	%\frontmatter
+	\maketitle
 
 \end{document}
 

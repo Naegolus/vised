@@ -27,12 +27,8 @@
 # -----------------------------------------------------------------------------
 # -----------------------------------------------------------------------------
 
-all: trac_logo/main.pdf documentation/doc_built
-
-trac_logo/main.pdf:
+all:
 	make -C trac_logo
-
-documentation/doc_built:
 	make -C documentation
 
 clean:
@@ -46,4 +42,5 @@ help:
 	@echo '  all                  default. build everything in this repository'
 	@echo '  clean                clean entire repository'
 	@echo '  help                 print this message'
+	@echo
 

@@ -27,12 +27,16 @@
 # -----------------------------------------------------------------------------
 # -----------------------------------------------------------------------------
 
+TEX_DIR		= .
+TEX_SRC		= $(foreach d, $(TEX_DIR), $(wildcard $(d)/*.tex))
+
 all: main.pdf
 
-main.pdf:
-	pdflatex -shell-escape main.tex
+main.pdf: $(TEX_SRC) literature.bib
+	pdflatex --shell-escape main.tex
+	rm -f main.pdf
 	biber main
-	pdflatex -shell-escape main.tex
+	pdflatex --shell-escape main.tex
 	cp main.pdf ../00_vised_Introduction.pdf
 
 clean:
@@ -41,7 +45,7 @@ clean:
 	@rm -f *.bbl
 	@rm -f *.bcf
 	@rm -f *.blg
-	@rm -f *.dvi 
+	@rm -f *.dvi
 	@rm -f *.log
 	@rm -f *.toc
 	@rm -f *.out

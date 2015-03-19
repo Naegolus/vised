@@ -27,13 +27,8 @@
 # -----------------------------------------------------------------------------
 # -----------------------------------------------------------------------------
 
-all: template/main.pdf main/main.pdf
-	touch doc_built
-
-template/main.pdf:
+all:
 	make -C template
-
-main/main.pdf:
 	make -C main
 
 clean:
@@ -41,7 +36,6 @@ clean:
 	make -C template clean
 	make -C main clean
 	@rm -f *.pdf
-	@rm -f doc_built
 	@echo done.
 
 help:
@@ -49,6 +43,6 @@ help:
 	@echo 'Usage: make [TARGET]'
 	@echo 'TARGETS:'
 	@echo '  all                  default. build all documents'
-	@echo '  clean                clean Documentation directory'
+	@echo '  clean                clean documentation directory'
 	@echo '  help                 print this message'
 
