@@ -3,4 +3,5 @@ vised
 
 Visual Software Editor
 
-todo
+Current project website: http://helmut.us.to/vised
+
