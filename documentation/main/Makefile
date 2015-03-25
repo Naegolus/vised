@@ -34,8 +34,8 @@ all: main.pdf
 
 main.pdf: $(TEX_SRC) literature.bib
 	pdflatex --shell-escape main.tex
-	rm -f main.pdf
-	biber main
+	bibtex main
+	pdflatex --shell-escape main.tex
 	pdflatex --shell-escape main.tex
 	cp main.pdf ../00_vised_Introduction.pdf
 
