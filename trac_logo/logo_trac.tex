@@ -27,30 +27,32 @@
 % -----------------------------------------------------------------------------
 % -----------------------------------------------------------------------------
 
-\documentclass[a4paper,11pt,oneside]{book}
+\documentclass[11pt]{article}
 \usepackage{array}
 \usepackage{graphicx}
 \usepackage{color}
 
 \graphicspath{{../documentation/_common/}}
 
-\definecolor{mrwhite}{RGB}{254,254,254}
+\definecolor{mrwhite}{RGB}{254, 254, 254}
+
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
 
 \begin{document}
 
-	\author{}
-	\title
+	\clearpage
+	\thispagestyle{empty}
+
+	\hspace{-4.0 cm}
+	\fcolorbox{mrwhite}{mrwhite}
 	{
-		\fcolorbox{mrwhite}{mrwhite}
-		{
-			\begin{tabular}{>{\centering\arraybackslash}m{3.8 cm}l>{\centering\arraybackslash}m{3.8 cm}}
-				\vspace{0.3 cm}\includegraphics[width=100 pt]{logo} & \textbf{Visual Software Editor} & \vspace{0.3 cm}\includegraphics[width=100 pt]{gplv3_logo_red}
-			\end{tabular}
-		}
+		\begin{tabular}{C{3.8 cm}lC{3.8 cm}C{3.8 cm}}
+			\vspace{0.3 cm}\includegraphics[width=100 pt]{logo} &
+			\textbf{Visual Software Editor} &
+			\vspace{0.3 cm}\includegraphics[width=100 pt]{git_logo_black} &
+			\vspace{0.3 cm}\includegraphics[width=100 pt]{gplv3_logo_red}
+		\end{tabular}
 	}
-	\date{}
-	%\frontmatter
-	\maketitle
 
 \end{document}
 
