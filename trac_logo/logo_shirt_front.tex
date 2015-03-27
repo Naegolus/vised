@@ -34,21 +34,24 @@
 
 \graphicspath{{../documentation/_common/}}
 
-\definecolor{mrwhite}{RGB}{254,254,254}
+\definecolor{mrwhite}{RGB}{254, 254, 254}
+
+% http://tex.stackexchange.com/questions/22715/how-to-vertically-align-a-cell-in-a-table
+\newcolumntype{M}{>{$\vcenter\bgroup\hbox\bgroup}c<{\egroup\egroup$}}
+
+\newlength{\picw}
+\setlength{\picw}{100pt}
 
 \begin{document}
 
-	\author{}
-	\title
+	\clearpage
+	\thispagestyle{empty}
+
+	\hspace{-4.0cm}
+	\fcolorbox{mrwhite}{mrwhite}
 	{
-		\fcolorbox{mrwhite}{mrwhite}
-		{
-			\includegraphics[width=100 pt]{logo}
-		}
+		\includegraphics[width=\picw]{logo}
 	}
-	\date{}
-	%\frontmatter
-	\maketitle
 
 \end{document}
 

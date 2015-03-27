@@ -36,21 +36,25 @@
 
 \definecolor{mrwhite}{RGB}{254, 254, 254}
 
-\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+% http://tex.stackexchange.com/questions/22715/how-to-vertically-align-a-cell-in-a-table
+\newcolumntype{M}{>{$\vcenter\bgroup\hbox\bgroup}c<{\egroup\egroup$}}
+
+\newlength{\picw}
+\setlength{\picw}{100pt}
 
 \begin{document}
 
 	\clearpage
 	\thispagestyle{empty}
 
-	\hspace{-4.0 cm}
+	\hspace{-4.0cm}
 	\fcolorbox{mrwhite}{mrwhite}
 	{
-		\begin{tabular}{C{3.8 cm}lC{3.8 cm}C{3.8 cm}}
-			\vspace{0.3 cm}\includegraphics[width=100 pt]{logo} &
-			\textbf{Visual Software Editor} &
-			\vspace{0.3 cm}\includegraphics[width=100 pt]{git_logo_black} &
-			\vspace{0.3 cm}\includegraphics[width=100 pt]{gplv3_logo_red}
+		\begin{tabular}{MMMM}
+			\includegraphics[width=\picw]{logo} &
+			\LARGE{\textbf{Visual Software Editor}} &
+			\includegraphics[width=\picw]{git_logo_black} &
+			\includegraphics[width=\picw]{gplv3_logo_red}
 		\end{tabular}
 	}
 

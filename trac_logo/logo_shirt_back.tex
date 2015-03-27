@@ -27,30 +27,42 @@
 % -----------------------------------------------------------------------------
 % -----------------------------------------------------------------------------
 
-\documentclass[a4paper,11pt,oneside]{book}
+\documentclass[11pt]{article}
 \usepackage{array}
 \usepackage{graphicx}
 \usepackage{color}
 
 \graphicspath{{../documentation/_common/}}
 
-\definecolor{mrwhite}{RGB}{254,254,254}
+\definecolor{mrwhite}{RGB}{254, 254, 254}
+
+% http://tex.stackexchange.com/questions/22715/how-to-vertically-align-a-cell-in-a-table
+\newcolumntype{M}{>{$\vcenter\bgroup\hbox\bgroup}c<{\egroup\egroup$}}
+
+\newlength{\picw}
+\setlength{\picw}{100pt}
 
 \begin{document}
+	% http://tex.stackexchange.com/questions/18210/why-is-text-being-placed-beyond-the-specified-line-width
+	\sloppy
 
-	\author{}
-	\title
+	\clearpage
+	\thispagestyle{empty}
+
+	\centering
+	\fcolorbox{mrwhite}{mrwhite}
 	{
-		\fcolorbox{mrwhite}{mrwhite}
-		{
-			\begin{tabular}{>{\centering\arraybackslash}m{3.8 cm}l>{\centering\arraybackslash}m{3.8 cm}}
-				\vspace{0.3 cm}\includegraphics[width=100 pt]{logo} & \textbf{Visual Software Editor} & \vspace{0.3 cm}\includegraphics[width=100 pt]{gplv3_logo_black}
-			\end{tabular}
-		}
+		\begin{tabular}{MMMM}
+			\includegraphics[width=\picw]{logo} &
+			\LARGE{\textbf{Visual Software Editor}}
+		\end{tabular}
 	}
-	\date{}
-	%\frontmatter
-	\maketitle
-
+	\fcolorbox{mrwhite}{mrwhite}
+	{
+		\begin{tabular}{MMMM}
+			\includegraphics[width=\picw]{git_logo_black} &
+			\includegraphics[width=\picw]{gplv3_logo_black}
+		\end{tabular}
+	}
 \end{document}
 
