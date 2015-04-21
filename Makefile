@@ -27,11 +27,35 @@
 # -----------------------------------------------------------------------------
 # -----------------------------------------------------------------------------
 
-all:
+programName = vised
+
+srcDir = ./src
+objDir = ./obj
+target = $(objDir)/$(programName)
+
+cppc = g++
+cflags = -O0 -g3 -Wall -fmessage-length=0 -std=c++11 -pthread
+
+ld = g++
+ldflags =
+libs = pthread
+liboptions = $(addprefix -l, $(libs))
+
+srcAll = $(wildcard $(srcDir)/*.cpp)
+objAll = $(addprefix $(objDir)/, $(notdir $(srcAll:%.cpp=%.o)))
+
+all: $(target)
 	make -C trac_logo
 	make -C documentation
 
+$(target): $(objAll)
+	$(ld) -o "$@" $^ $(ldflags) $(liboptions)
+
+$(objDir)/%.o: $(srcDir)/%.cpp
+	$(cppc) -c "$<" $(cflags) -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@"
+
 clean:
+	rm -rf obj/*
 	make -C trac_logo clean
 	make -C documentation clean
 
